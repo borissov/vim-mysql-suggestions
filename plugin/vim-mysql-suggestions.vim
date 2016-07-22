@@ -1,7 +1,7 @@
 
 let g:path_myslq_plugin = expand('<sfile>:p:h')
 
-function! MyCompleteFunction( findstart, base )
+function! MySQLCompleteFunction( findstart, base )
   if a:findstart
     let line = getline('.')
     let start = col('.') - 1
