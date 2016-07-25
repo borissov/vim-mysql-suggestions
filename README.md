@@ -4,6 +4,12 @@ A plugin of VIM to show suggestion from MySQL database.
 ##About
 
 ##Installation
+Via Plugin Manager
+###Vundle
+```viml
+    Plugin 'borissov/vim-mysql-suggestions'
+```
+
 In your vimrc file add options.
 ```viml
     " File Types you want to use suggestions
