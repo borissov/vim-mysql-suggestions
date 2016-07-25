@@ -1,6 +1,6 @@
 #vim-mysql-suggestions
 ##About
-A plugin of VIM to show suggestion from MySQL database.
+A plugin of VIM to show suggestions from MySQL database structure.
 
 ##Installation
 Via Plugin Manager
