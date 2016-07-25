@@ -20,4 +20,10 @@ In your vimrc file add options.
     let g:database_database = "MySQL Database Name"
     let g:database_user = "MySQL User"
 ```
+##Usage
 
+###Default mappings
+
+The following key mappings are provided by default: 
+* `<C-x><C-u>` Call user completion function 
+* `<C-x>` Show completion menu
