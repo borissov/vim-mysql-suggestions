@@ -4,6 +4,7 @@ A plugin of VIM to show suggestions from MySQL database structure.
 
 ##Installation
 Via Plugin Manager
+
 ###Vundle
 ```viml
     Plugin 'borissov/vim-mysql-suggestions'
@@ -19,6 +20,11 @@ In your vimrc file add options.
     let g:database_database = "MySQL Database Name"
     let g:database_user = "MySQL User"
 ```
+
+###Requirements
+* `PHP 5+` 
+* `VIM 7.3+` 
+
 ##Usage
 
 ###Default mappings
