@@ -45,7 +45,7 @@ if(isset($argv[1]) && $argv[1] != '')
             {   
                 if(strpos($row['COLUMN_NAME'],$word) === 0)
                 {  
-                    $all_names[$row['COLUMN_NAME']] = $row['COLUMN_NAME'].'/'.$row['TABLE_NAME'].'/'.$row['COLUMN_TYPE'];
+                    $all_names[$row['TABLE_NAME'].'.'.$row['COLUMN_NAME']] = $row['COLUMN_NAME'].'/'.$row['TABLE_NAME'].'/'.$row['COLUMN_TYPE'];
                 }
                 if(strpos($row['TABLE_NAME'],$word) === 0)
                 {
