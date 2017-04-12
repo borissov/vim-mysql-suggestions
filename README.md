@@ -1,11 +1,12 @@
-#vim-mysql-suggestions
-##About
+# vim-mysql-suggestions
+---
+## About
 A plugin of VIM to show suggestions from MySQL database structure.
 
-##Installation
+## Installation
 Via Plugin Manager
 
-###Vundle
+### Vundle
 ```viml
     Plugin 'borissov/vim-mysql-suggestions'
 ```
@@ -21,13 +22,13 @@ In your vimrc file add options.
     let g:database_user = "MySQL User"
 ```
 
-###Requirements
+### Requirements
 * `PHP 5+` 
 * `VIM 7.3+` 
 
-##Usage
+## Usage
 
-###Default mappings
+### Default mappings
 
 The following key mappings are provided by default: 
 * `<C-x><C-u>` Call user completion function 
