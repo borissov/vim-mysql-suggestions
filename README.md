@@ -19,6 +19,7 @@ In your vimrc file add options.
     " File Types you want to use suggestions
     autocmd FileType php setlocal completefunc=MySQLCompleteFunction
     autocmd FileType javascript setlocal completefunc=MySQLCompleteFunction
+    " Be careful and don't publish in Github 
     let g:database_host = "MySQL Host"
     let g:database_password = "MySQL Password"
     let g:database_database = "MySQL Database Name"
