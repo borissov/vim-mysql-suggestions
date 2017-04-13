@@ -4,7 +4,7 @@
 A plugin of VIM to show suggestions from MySQL database structure.
 
 ## Demo
-![alt tag](https://raw.githubusercontent.com/borissov/vim-mysql-suggestions/master/preview_1.gif)
+![alt tag](https://raw.githubusercontent.com/borissov/vim-mysql-suggestions/master/images/preview_1.gif)
 
 ## Installation
 Via Plugin Manager
