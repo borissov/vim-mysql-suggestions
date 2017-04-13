@@ -1,4 +1,4 @@
-# vim-mysql-suggestions
+# VIM MySQL Suggestions
 
 ## About
 A plugin of VIM to show suggestions from MySQL database structure.
