@@ -32,8 +32,8 @@ In your vimrc file add options.
     let g:database_user = "MySQL User"
 ```
 ## Requirements
-* `PHP 5+` 
 * `VIM 7.3+` 
+* `PHP CLI 5+` 
 ## Usage
 ### Default mappings
 The following key mappings are provided by default: 
