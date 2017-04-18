@@ -31,13 +31,13 @@ In your vimrc file add options.
     let g:database_database = "MySQL Database Name"
     let g:database_user = "MySQL User"
 ```
-## Requirements
-* `VIM 7.3+` 
-* `PHP CLI 5+` 
 ## Usage
 ### Default mappings
 The following key mappings are provided by default: 
 * `<C-x><C-u>` Call user completion function 
 * `<C-x>` Show completion menu
+## Requirements
+* `VIM 7.3+` 
+* `PHP CLI 5+` 
 ## Feedback 
 If you have any comments or questions about specific problems relating to this plugin, please do not hesitate to contact me. Tested on Vim, NeoVim, MacVim, gVim. Not support Windows versions.
