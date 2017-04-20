@@ -36,6 +36,12 @@ In your vimrc file add options.
 The following key mappings are provided by default: 
 * `<C-x><C-u>` Call user completion function 
 * `<C-x>` Show completion menu
+### SuperTab optional integration
+```viml
+    let g:SuperTabDefaultCompletionType = "context"
+    let g:SuperTabCompletionContexts = ['MySQLCompleteSuperTabContext']
+```
+
 ## Requirements
 * `VIM 7.3+` 
 * `PHP CLI 5+` 
