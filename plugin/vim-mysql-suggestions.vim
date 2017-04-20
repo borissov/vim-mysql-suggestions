@@ -29,3 +29,33 @@ function! DatabasePrefixesInit(word)
 endfunction
 
 
+function! MySQLCompleteSuperTabContext()
+
+    let column = col('.')
+    if column > 1  
+        
+        let synname = synIDattr(synID(line('.'), column-1, 1), 'name')
+        
+        if  synname == 'phpStringSingle' || synname == 'javaScriptString' || synname == 'javaScriptFuncArg'
+           return "\<c-x>\<c-u>"
+        elseif synname == 'phpMethodsVar' 
+            let curline = getline('.')
+            let beforecursor = curline[ 0 : (column-2) ]
+            let splitWord = split(beforecursor, '->')
+            let currentWord = splitWord[-1]
+            let currentWord = substitute( currentWord , "_" , '' , 'g')
+
+            if strlen(currentWord) > 2 
+               if DatabasePrefixesInit( currentWord ) == '1'
+                    return "\<c-x>\<c-u>"
+                endif
+            endif
+            return "\<c-x>\<c-o>"
+        endif
+        
+        if &omnifunc != ''
+            return "\<c-x>\<c-o>"
+        endif
+    endif
+    return "\<c-x>\<c-p>"
+endfunction
