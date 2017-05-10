@@ -38,7 +38,8 @@ if(isset($argv[1]) && $argv[1] != '')
         }
         else
         {
-            $sql_statement = "SELECT COLUMN_NAME,TABLE_NAME,COLUMN_TYPE  FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = '".$database."' AND ( COLUMN_NAME LIKE '".$word."%' OR TABLE_NAME LIKE '".$word."%' )";
+            //search for columns
+            $sql_statement = "SELECT COLUMN_NAME,TABLE_NAME,COLUMN_TYPE  FROM INFORMATION_SCHEMA.COLUMNS WHERE TABLE_SCHEMA = '".$database."' AND  COLUMN_NAME LIKE '".$word."%' ";
             
             $result = $dblink->query($sql_statement); 
             while($row = mysqli_fetch_array($result)) 
@@ -47,9 +48,17 @@ if(isset($argv[1]) && $argv[1] != '')
                 {  
                     $all_names[$row['TABLE_NAME'].'.'.$row['COLUMN_NAME']] = $row['COLUMN_NAME'].'/'.$row['TABLE_NAME'].'/'.$row['COLUMN_TYPE'];
                 }
+             }
+
+            //search for tables and views 
+            $sql_statement = "SELECT TABLE_NAME,TABLE_TYPE  FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_SCHEMA = '".$database."' AND  TABLE_NAME LIKE '".$word."%' ";
+            
+            $result = $dblink->query($sql_statement); 
+            while($row = mysqli_fetch_array($result)) 
+            {   
                 if(strpos($row['TABLE_NAME'],$word) === 0)
                 {
-                    $all_names[$row['TABLE_NAME']] = $row['TABLE_NAME'].'//table';
+                    $all_names[$row['TABLE_NAME']] = $row['TABLE_NAME'].'//'.strtolower($row['TABLE_TYPE']);
                 }
             }
         }
