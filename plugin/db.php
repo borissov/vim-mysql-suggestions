@@ -2,7 +2,7 @@
 
 if(isset($argv[1]) && $argv[1] != '')
 {
-    $all_names = [];
+    $all_names = array();
 
     $word = $argv[5];
     $database = $argv[4];
