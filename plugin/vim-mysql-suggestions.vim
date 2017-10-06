@@ -41,7 +41,7 @@ function! MySQLCompleteSuperTabContext()
             
             let synname = synIDattr(synID(line('.'), column-1, 1), 'name')
             
-            if  synname == 'phpStringSingle' || synname == 'javaScriptString' || synname == 'javaScriptFuncArg' 
+            if synname == 'phpStringSingle' || synname == 'javaScriptString' || synname == 'javaScriptFuncArg' 
                 if getline('.') =~ '/'
                     return "\<c-x>\<c-f>"
                 endif
@@ -58,7 +58,6 @@ function! MySQLCompleteSuperTabContext()
                         return "\<c-x>\<c-u>"
                     endif
                 endif
-                return "\<c-x>\<c-o>"
             endif
             
             if &omnifunc != ''
