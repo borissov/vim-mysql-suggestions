@@ -37,7 +37,10 @@ function! MySQLCompleteSuperTabContext()
         let synname = synIDattr(synID(line('.'), column-1, 1), 'name')
         
         if  synname == 'phpStringSingle' || synname == 'javaScriptString' || synname == 'javaScriptFuncArg'
-           return "\<c-x>\<c-u>"
+            if getline('.') =~ '/'
+                return "\<c-x>\<c-f>"
+            endif
+            return "\<c-x>\<c-u>"
         elseif synname == 'phpMethodsVar' 
             let curline = getline('.')
             let beforecursor = curline[ 0 : (column-2) ]
