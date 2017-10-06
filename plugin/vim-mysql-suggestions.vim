@@ -59,11 +59,10 @@ function! MySQLCompleteSuperTabContext()
                     endif
                 endif
             endif
-            
-            if &omnifunc != ''
-                return "\<c-x>\<c-o>"
-            endif
         endif
+    endif
+    if &omnifunc != ''
+        return "\<c-x>\<c-o>"
     endif
     return "\<c-x>\<c-p>"
 endfunction
