@@ -10,7 +10,14 @@ if(isset($argv[1]) && $argv[1] != '')
     $user = $argv[2];
     $host = $argv[1];
 
-    $dblink = mysqli_connect($host, $user, $password, $database);
+    $dblink = mysqli_init();
+    $dblink->options(MYSQLI_OPT_CONNECT_TIMEOUT, 5);
+    $dblink->options(MYSQLI_OPT_READ_TIMEOUT, 5);
+    if(!@$dblink->real_connect($host, $user, $password, $database)) 
+    {
+        echo "connection_error//error";
+        exit;
+    }
     if(strlen($word))
     {
         if($word == 'prefixes')
