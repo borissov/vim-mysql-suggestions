@@ -73,7 +73,5 @@ if(isset($argv[1]) && $argv[1] != '')
 
     mysqli_close($dblink);
     
-    array_multisort(array_map('strlen', $all_names), $all_names);
-    
     echo implode(';', $all_names);
 }
